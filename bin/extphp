@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+/**
+ * This file is part of extended-php.
+ *
+ * @author  chrishyze <chrishyze@gmail.com>
+ * @link    https://github.com/chrishyze/extended-php
+ * @license https://github.com/chrishyze/extended-php/blob/master/LICENSE
+ */
+
+require __DIR__.'/../vendor/autoload.php';
+
+use ExtendedPhp\Command\GenerateCommand;
+use Symfony\Component\Console\Application;
+
+$application = new Application();
+
+$application->add(new GenerateCommand());
+
+$application->run();

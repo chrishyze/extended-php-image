@@ -1,0 +1,8 @@
+FROM php:{{ tag }}
+
+LABEL version="1.0"
+LABEL org.opencontainers.image.authors="chrishyze@gmail.com"
+
+COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
+RUN install-php-extensions {{ extensions }} &&\
+    rm -f /usr/local/etc/php/conf.d/*.ini
