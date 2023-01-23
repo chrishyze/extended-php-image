@@ -27,7 +27,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: "{context}/dockerfile/8.2/fpm/Dockerfile"
+          file: "dockerfile/8.2/fpm/Dockerfile"
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/extended-php:8.2-fpm
           platforms: linux/amd64,linux/arm64/v8,linux/arm/v7
@@ -53,7 +53,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: "{context}/dockerfile/8.2/fpm-alpine/Dockerfile"
+          file: "dockerfile/8.2/fpm-alpine/Dockerfile"
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/extended-php:8.2-fpm-alpine
           platforms: linux/amd64,linux/arm64/v8,linux/arm/v7
@@ -79,7 +79,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: "{context}/dockerfile/8.2/cli/Dockerfile"
+          file: "dockerfile/8.2/cli/Dockerfile"
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/extended-php:8.2-cli
           platforms: linux/amd64,linux/arm64/v8,linux/arm/v7
@@ -105,7 +105,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: "{context}/dockerfile/8.2/cli-alpine/Dockerfile"
+          file: "dockerfile/8.2/cli-alpine/Dockerfile"
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/extended-php:8.2-cli-alpine
           platforms: linux/amd64,linux/arm64/v8,linux/arm/v7
@@ -131,7 +131,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: "{context}/dockerfile/8.1/fpm/Dockerfile"
+          file: "dockerfile/8.1/fpm/Dockerfile"
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/extended-php:8.1-fpm
           platforms: linux/amd64,linux/arm64/v8,linux/arm/v7
@@ -157,7 +157,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: "{context}/dockerfile/8.1/fpm-alpine/Dockerfile"
+          file: "dockerfile/8.1/fpm-alpine/Dockerfile"
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/extended-php:8.1-fpm-alpine
           platforms: linux/amd64,linux/arm64/v8,linux/arm/v7
@@ -183,7 +183,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: "{context}/dockerfile/8.1/cli/Dockerfile"
+          file: "dockerfile/8.1/cli/Dockerfile"
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/extended-php:8.1-cli
           platforms: linux/amd64,linux/arm64/v8,linux/arm/v7
@@ -209,7 +209,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: "{context}/dockerfile/8.1/cli-alpine/Dockerfile"
+          file: "dockerfile/8.1/cli-alpine/Dockerfile"
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/extended-php:8.1-cli-alpine
           platforms: linux/amd64,linux/arm64/v8,linux/arm/v7
@@ -235,7 +235,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: "{context}/dockerfile/8.0/fpm/Dockerfile"
+          file: "dockerfile/8.0/fpm/Dockerfile"
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/extended-php:8.0-fpm
           platforms: linux/amd64,linux/arm64/v8,linux/arm/v7
@@ -261,7 +261,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: "{context}/dockerfile/8.0/fpm-alpine/Dockerfile"
+          file: "dockerfile/8.0/fpm-alpine/Dockerfile"
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/extended-php:8.0-fpm-alpine
           platforms: linux/amd64,linux/arm64/v8,linux/arm/v7
@@ -287,7 +287,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: "{context}/dockerfile/8.0/cli/Dockerfile"
+          file: "dockerfile/8.0/cli/Dockerfile"
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/extended-php:8.0-cli
           platforms: linux/amd64,linux/arm64/v8,linux/arm/v7
@@ -313,7 +313,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: "{context}/dockerfile/8.0/cli-alpine/Dockerfile"
+          file: "dockerfile/8.0/cli-alpine/Dockerfile"
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/extended-php:8.0-cli-alpine
           platforms: linux/amd64,linux/arm64/v8,linux/arm/v7

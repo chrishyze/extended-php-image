@@ -28,7 +28,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: "{context}/{{ job.file }}"
+          file: "{{ job.file }}"
           push: true
           tags: {{ '${{ secrets.DOCKERHUB_USERNAME }}' }}/extended-php:{{ job.tag }}
           platforms: linux/amd64,linux/arm64/v8,linux/arm/v7
