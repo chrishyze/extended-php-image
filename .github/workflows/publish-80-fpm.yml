@@ -1,4 +1,4 @@
-name: {{ name }}
+name: Publish 8.0-fpm
 
 on:
   push:
@@ -17,8 +17,8 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: {{ '${{ secrets.DOCKERHUB_USERNAME }}' }}
-          password: {{ '${{ secrets.DOCKERHUB_TOKEN }}' }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
@@ -27,7 +27,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: "{{ dockerfile }}"
+          file: "dockerfile/8.0/fpm/Dockerfile"
           push: true
-          tags: {{ '${{ secrets.DOCKERHUB_USERNAME }}' }}/extended-php:{{ tag }}
-          platforms: {{ platforms }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/extended-php:8.0-fpm
+          platforms: linux/amd64,linux/arm64/v8,linux/arm/v7

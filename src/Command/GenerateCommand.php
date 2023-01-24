@@ -41,21 +41,31 @@ class GenerateCommand extends Command
     {
         $output->writeln(['', 'Extended PHP Generator', '']);
 
+        $platforms = ['linux/amd64', 'linux/arm64/v8', 'linux/arm/v7'];
+        $excludeArmv7Tags = ['8.2-fpm', '8.2-cli', '8.1-fpm', '8.1-cli'];
         $extensions = ['apcu', 'bcmath', 'bz2', 'event', 'exif', 'gd', 'gnupg', 'imagick',
             'memcached', 'mongodb', 'mysqli', 'opcache', 'pcntl', 'pdo_mysql', 'pdo_pgsql',
             'pgsql', 'protobuf', 'redis', 'sockets', 'ssh2', 'swoole', 'xdebug', 'zip', 'zstd'];
 
-        $jobs = [];
+        $workflows = [];
 
         $output->writeln('Generating dockerfiles...');
         $loader = new \Twig\Loader\FilesystemLoader($this->projectDir.'/template');
         $twig = new \Twig\Environment($loader);
         foreach (['8.2', '8.1', '8.0', '7.4'] as $version) {
             foreach (['fpm', 'fpm-alpine', 'cli', 'cli-alpine'] as $tag) {
-                $jobs[] = [
-                    'name' => str_replace(['.', '-'], ['', '_'], "build_{$version}_{$tag}"),
+                $platformsTemp = $platforms;
+                if (in_array("{$version}-{$tag}", $excludeArmv7Tags)) {
+                    $platformsTemp = array_filter($platformsTemp, function ($platform): bool {
+                        return strpos($platform, 'arm/v7') === false;
+                    });
+                }
+                $workflows[] = [
+                    'file' => str_replace('.', '', "publish-{$version}-{$tag}"),
+                    'name' => "Publish {$version}-{$tag}",
                     'tag' => "{$version}-{$tag}",
-                    'file' => "dockerfile/{$version}/{$tag}/Dockerfile",
+                    'dockerfile' => "dockerfile/{$version}/{$tag}/Dockerfile",
+                    'platforms' => implode(',', $platformsTemp),
                 ];
 
                 $dir = "{$this->projectDir}/dockerfile/{$version}/{$tag}";
@@ -76,11 +86,13 @@ class GenerateCommand extends Command
             }
         }
 
-        $output->writeln(['', 'Generating Github workflows...']);
-        $content = $twig->render('publish-docker-hub.twig', ['jobs' => $jobs]);
-        $path = "{$this->projectDir}/.github/workflows/publish-docker-hub.yml";
-        file_put_contents($path, $content);
-        $output->writeln('output: '.$path);
+        $output->writeln(['', 'Generating Github Workflow files...']);
+        foreach ($workflows as $workflow) {
+            $content = $twig->render('publish-docker-hub.twig', $workflow);
+            $path = "{$this->projectDir}/.github/workflows/{$workflow['file']}.yml";
+            file_put_contents($path, $content);
+            $output->writeln('output: '.$path);
+        }
 
         $output->writeln(['', 'Done.']);
 
