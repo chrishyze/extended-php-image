@@ -32,6 +32,28 @@ You can build you own one base on these images for time-saving.
 |      | cli        | amd64, arm64v8, arm32v7 | [![7.4-cli](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-74-cli.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-74-cli.yml) |
 |      | cli-alpine | amd64, arm64v8, arm32v7 | [![7.4-cli-alpine](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-74-cli-alpine.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-74-cli-alpine.yml) |
 
+## How to enable extension
+
+Just use `/usr/local/etc/php/php.ini` to configure the extension.  
+
+```shell
+echo 'zend_extension=xdebug' >> /usr/local/etc/php/php.ini
+```
+
+Or add an independent ini file to `/usr/local/etc/php/conf.d/` directory.  
+
+```shell
+echo 'zend_extension=xdebug' > /usr/local/etc/php/conf.d/xdebug.ini
+```
+
+Don't forget to reload the configuration if you are using php-fpm.  
+
+Since you are using Docker, you can also prepare a directory contains configure files and then mount the directory.  
+
+```shell
+docker run -v /path/to/config/directory:/usr/local/etc/php ...
+```
+
 ## Why not install all available extensions?
 
 In modern development, you don't need to use those outdated extensions in most cases.  
