@@ -41,9 +41,9 @@ class GenerateCommand extends Command
     {
         $output->writeln(['', 'Extended PHP Generator', '']);
 
-        $extensions = ['amqp', 'apcu', 'bcmath', 'bz2', 'event', 'exif', 'gd', 'gnupg', 'imagick',
+        $extensions = ['apcu', 'bcmath', 'bz2', 'event', 'exif', 'gd', 'gnupg', 'imagick',
             'memcached', 'mongodb', 'mysqli', 'opcache', 'pcntl', 'pdo_mysql', 'pdo_pgsql',
-            'pgsql', 'protobuf', 'redis', 'ssh2', 'swoole', 'xdebug', 'zip', 'zstd'];
+            'pgsql', 'protobuf', 'redis', 'sockets', 'ssh2', 'swoole', 'xdebug', 'zip', 'zstd'];
 
         $jobs = [];
 
