@@ -1,7 +1,7 @@
 # Extended PHP
 
 This respository provide PHP images with pre-build extensions.  
-You can build you own one base on these images for time-saving.  
+You can build you own image base on these images for time-saving.  
 
 ## Features
 
@@ -9,28 +9,28 @@ You can build you own one base on these images for time-saving.
 - Supported architectures: amd64, arm64v8, arm32v7
 - Supported extensions: apcu, bcmath, bz2, event, exif, gd, gnupg, imagick, memcached, mongodb, mysqli, opcache, pcntl, pdo_mysql, pdo_pgsql, pgsql, protobuf, redis, sockets, ssh2, swoole, xdebug, zip, zstd
 - Extensions are installed by [mlocati/docker-php-extension-installer](https://github.com/mlocati/docker-php-extension-installer)
-- All installed extensions are diabled by default, feel free to enable them in needed  
+- All installed extensions are disabled by default, feel free to enable them in needed  
 
 ## Build status
 
-| PHP  | Base image | Platform                | Status |
-| ---- | ---------- | ----------------------- | ------ |
-| 8.2  | fpm        | amd64, arm64v8          | [![8.2-fpm](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-82-fpm.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-82-fpm.yml) |
-|      | fpm-alpine | amd64, arm64v8, arm32v7 | [![8.2-fpm-alpine](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-82-fpm-alpine.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-82-fpm-alpine.yml) |
-|      | cli        | amd64, arm64v8          | [![8.2-cli](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-82-cli.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-82-cli.yml) |
-|      | cli-alpine | amd64, arm64v8, arm32v7 | [![8.2-cli-alpine](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-82-cli-alpine.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-82-cli-alpine.yml) |
-| 8.1  | fpm        | amd64, arm64v8          | [![8.1-fpm](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-81-fpm.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-81-fpm.yml) |
-|      | fpm-alpine | amd64, arm64v8, arm32v7 | [![8.1-fpm-alpine](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-81-fpm-alpine.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-81-fpm-alpine.yml) |
-|      | cli        | amd64, arm64v8          | [![8.1-cli](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-81-cli.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-81-cli.yml) |
-|      | cli-alpine | amd64, arm64v8, arm32v7 | [![8.1-cli-alpine](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-81-cli-alpine.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-81-cli-alpine.yml) |
-| 8.0  | fpm        | amd64, arm64v8, arm32v7 | [![8.0-fpm](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-80-fpm.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-80-fpm.yml) |
-|      | fpm-alpine | amd64, arm64v8, arm32v7 | [![8.0-fpm-alpine](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-80-fpm-alpine.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-80-fpm-alpine.yml) |
-|      | cli        | amd64, arm64v8, arm32v7 | [![8.0-cli](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-80-cli.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-80-cli.yml) |
-|      | cli-alpine | amd64, arm64v8, arm32v7 | [![8.0-cli-alpine](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-80-cli-alpine.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-80-cli-alpine.yml) |
-| 7.4  | fpm        | amd64, arm64v8, arm32v7 | [![7.4-fpm](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-74-fpm.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-74-fpm.yml) |
-|      | fpm-alpine | amd64, arm64v8, arm32v7 | [![7.4-fpm-alpine](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-74-fpm-alpine.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-74-fpm-alpine.yml) |
-|      | cli        | amd64, arm64v8, arm32v7 | [![7.4-cli](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-74-cli.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-74-cli.yml) |
-|      | cli-alpine | amd64, arm64v8, arm32v7 | [![7.4-cli-alpine](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-74-cli-alpine.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-74-cli-alpine.yml) |
+| Image Tag      | Platform                | Status |
+| -------------- | ----------------------- | ------ |
+| 8.2-fpm        | amd64, arm64v8          | [![8.2-fpm](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-82-fpm.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-82-fpm.yml) |
+| 8.2-fpm-alpine | amd64, arm64v8, arm32v7 | [![8.2-fpm-alpine](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-82-fpm-alpine.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-82-fpm-alpine.yml) |
+| 8.2-cli        | amd64, arm64v8          | [![8.2-cli](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-82-cli.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-82-cli.yml) |
+| 8.2-cli-alpine | amd64, arm64v8, arm32v7 | [![8.2-cli-alpine](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-82-cli-alpine.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-82-cli-alpine.yml) |
+| 8.1-fpm        | amd64, arm64v8          | [![8.1-fpm](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-81-fpm.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-81-fpm.yml) |
+| 8.1-fpm-alpine | amd64, arm64v8, arm32v7 | [![8.1-fpm-alpine](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-81-fpm-alpine.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-81-fpm-alpine.yml) |
+| 8.1-cli        | amd64, arm64v8          | [![8.1-cli](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-81-cli.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-81-cli.yml) |
+| 8.1-cli-alpine | amd64, arm64v8, arm32v7 | [![8.1-cli-alpine](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-81-cli-alpine.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-81-cli-alpine.yml) |
+| 8.0-fpm        | amd64, arm64v8, arm32v7 | [![8.0-fpm](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-80-fpm.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-80-fpm.yml) |
+| 8.0-fpm-alpine | amd64, arm64v8, arm32v7 | [![8.0-fpm-alpine](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-80-fpm-alpine.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-80-fpm-alpine.yml) |
+| 8.0-cli        | amd64, arm64v8, arm32v7 | [![8.0-cli](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-80-cli.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-80-cli.yml) |
+| 8.0-cli-alpine | amd64, arm64v8, arm32v7 | [![8.0-cli-alpine](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-80-cli-alpine.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-80-cli-alpine.yml) |
+| 7.4-fpm        | amd64, arm64v8, arm32v7 | [![7.4-fpm](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-74-fpm.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-74-fpm.yml) |
+| 7.4-fpm-alpine | amd64, arm64v8, arm32v7 | [![7.4-fpm-alpine](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-74-fpm-alpine.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-74-fpm-alpine.yml) |
+| 7.4-cli        | amd64, arm64v8, arm32v7 | [![7.4-cli](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-74-cli.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-74-cli.yml) |
+| 7.4-cli-alpine | amd64, arm64v8, arm32v7 | [![7.4-cli-alpine](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-74-cli-alpine.yml/badge.svg?branch=publish)](https://github.com/chrishyze/extended-php-image/actions/workflows/publish-74-cli-alpine.yml) |
 
 ## How to enable extension
 
