@@ -50,7 +50,7 @@ class GenerateCommand extends Command
         $output->writeln('Generating dockerfiles...');
         $loader = new \Twig\Loader\FilesystemLoader($this->projectDir.'/template');
         $twig = new \Twig\Environment($loader);
-        foreach (['8.2', '8.1', '8.0'] as $version) {
+        foreach (['8.2', '8.1', '8.0', '7.4'] as $version) {
             foreach (['fpm', 'fpm-alpine', 'cli', 'cli-alpine'] as $tag) {
                 $jobs[] = [
                     'name' => str_replace(['.', '-'], ['', '_'], "build_{$version}_{$tag}"),
