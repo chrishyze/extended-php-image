@@ -43,9 +43,32 @@ class GenerateCommand extends Command
 
         $platforms = ['linux/amd64', 'linux/arm64/v8', 'linux/arm/v7'];
         $excludeArmv7Tags = ['8.2-fpm', '8.2-cli', '8.1-fpm', '8.1-cli'];
-        $extensions = ['apcu', 'bcmath', 'bz2', 'event', 'exif', 'gd', 'gnupg', 'imagick',
-            'memcached', 'mongodb', 'mysqli', 'opcache', 'pcntl', 'pdo_mysql', 'pdo_pgsql',
-            'pgsql', 'protobuf', 'redis', 'sockets', 'ssh2', 'swoole', 'xdebug', 'zip', 'zstd'];
+        $extensions = [
+            'bcmath',
+            'event',
+            'exif',
+            'gd',
+            'gnupg',
+            'grpc',
+            'imagick',
+            'memcached',
+            'mongodb',
+            'mysqli',
+            'opcache',
+            'pcntl',
+            'pdo_mysql',
+            'pdo_pgsql',
+            'pgsql',
+            'protobuf',
+            'redis',
+            'sockets',
+            'ssh2',
+            'swoole',
+            'xdebug',
+            'zip',
+            'zookeeper',
+            'zstd',
+        ];
 
         $workflows = [];
 

@@ -6,8 +6,10 @@ You can build you own image base on these images for time-saving.
 ## Features
 
 - Based on [official PHP image](https://hub.docker.com/_/php/), include [security support versions](https://www.php.net/supported-versions.php) and extra PHP 7.4
-- Supported architectures: amd64, arm64v8, arm32v7
-- Supported extensions: apcu, bcmath, bz2, event, exif, gd, gnupg, imagick, memcached, mongodb, mysqli, opcache, pcntl, pdo_mysql, pdo_pgsql, pgsql, protobuf, redis, sockets, ssh2, swoole, xdebug, zip, zstd
+- Supported architectures:  
+  `amd64, arm64v8, arm32v7`
+- Installed extensions:  
+  `bcmath, event, exif, gd, gnupg, grpc, imagick, memcached, mongodb, mysqli, opcache, pcntl, pdo_mysql, pdo_pgsql, pgsql, protobuf, redis, sockets, ssh2, swoole, xdebug, zip, zookeeper, zstd`
 - Extensions are installed by [mlocati/docker-php-extension-installer](https://github.com/mlocati/docker-php-extension-installer)
 - All installed extensions are disabled by default, feel free to enable them in needed  
 
